@@ -8,6 +8,7 @@ import (
 	"net"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/sirupsen/logrus"
 )
@@ -25,12 +26,16 @@ var validUser = User{
 	Password: "9115",
 }
 
+// requestTracker was created for the purpose of tracking the time of a client's request.
+var requestTracker = make(map[string][]time.Time)
+
 func handleConnection(conn net.Conn) {
 	// Schedule the network connection to be closed via the net.Conn interface.
 	defer conn.Close()
 
 	// read the data from client
 	reader := bufio.NewReader(conn) // Create a Reader object to read data from the client.
+	clientAddr := conn.RemoteAddr().String()
 
 	for {
 		// Using Logrus to log the message
@@ -47,6 +52,18 @@ func handleConnection(conn net.Conn) {
 				}).Error("Failed to read from client")
 			}
 			return
+		}
+
+		// Update request tracking based on the current time
+		updateRequestTracker(clientAddr)
+
+		// Check for more than 10 requests in 10 seconds
+		if len(requestTracker[clientAddr]) > 10 {
+			log.WithFields(logrus.Fields{
+				"client": clientAddr,
+			}).Warning("Rate limit exceeded, disconnecting client")
+			fmt.Fprintf(conn, "Rate limit exceeded, disconnecting\n")
+			return // 연결 종료
 		}
 
 		// Processing data received from clients  "jkim9115:9115"
@@ -98,6 +115,24 @@ func handleConnection(conn net.Conn) {
 
 }
 
+// Keep track of the client's request time and only keep requests that are 10 seconds or less.
+func updateRequestTracker(clientAddr string) {
+	now := time.Now()
+	timestamps := requestTracker[clientAddr]
+
+	// Only keep timestamps within 10 seconds
+	var validTimestamps []time.Time
+	for _, t := range timestamps {
+		if now.Sub(t) <= 10*time.Second {
+			validTimestamps = append(validTimestamps, t)
+		}
+	}
+
+	// Add the current time
+	validTimestamps = append(validTimestamps, now)
+	requestTracker[clientAddr] = validTimestamps
+}
+
 func main() {
 
 	// Log as JSON instead of the default ASCII formatter.
@@ -131,19 +166,16 @@ func main() {
 	}
 	defer listener.Close()
 
-	log.Println("Server Started. Listening on port 8080") // [1]
+	log.Println("Server Started. Listening on port 8080")
 
 	for {
-		fmt.Println("Check [1]")
 		conn, err := listener.Accept()
 
 		if err != nil {
-			fmt.Println("Check [2]")
 			log.Println("Connection acceptance errors:", err)
 			continue
 		}
 
-		fmt.Println("Check [3]")
 		go handleConnection(conn)
 	}
 
