@@ -4,6 +4,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"net"
 	"os"
 
@@ -27,31 +28,38 @@ func handleConnection(conn net.Conn) {
 	// Schedule the network connection to be closed via the net.Conn interface.
 	defer conn.Close()
 
-	// Using Logrus to log the message
-	log.WithFields(logrus.Fields{
-		"client": conn.RemoteAddr(),
-	}).Info("Client connected") // [2]
-
 	// read the data from client
 	reader := bufio.NewReader(conn) // Create a Reader object to read data from the client.
 
-	input, err := reader.ReadString('\n')
-	if err != nil {
+	for {
+		// Using Logrus to log the message
+
+		input, err := reader.ReadString('\n')
+		if err != nil {
+			if err != io.EOF {
+				log.WithFields(logrus.Fields{
+					"client": conn.RemoteAddr(),
+				}).Info("Client connected") // [2]
+				break
+			}
+
+			log.WithFields(logrus.Fields{
+				"error":  err.Error(),
+				"client": conn.RemoteAddr(),
+			}).Error("Failed to read from client")
+			return
+		}
+
+		// Log the data received from the client.
 		log.WithFields(logrus.Fields{
-			"error":  err.Error(),
 			"client": conn.RemoteAddr(),
-		}).Error("Failed to read from client")
-		return
+			"data":   input,
+		}).Info("Received data from client")
+
+		// Test
+		fmt.Printf("Received from client: %s", input)
+
 	}
-
-	// Log the data received from the client.
-	log.WithFields(logrus.Fields{
-		"client": conn.RemoteAddr(),
-		"data":   input,
-	}).Info("Received data from client")
-
-	// Test
-	fmt.Printf("Received from client: %s", input)
 
 }
 
@@ -60,7 +68,7 @@ func main() {
 	// Log as JSON instead of the default ASCII formatter.
 	log.SetFormatter(&logrus.JSONFormatter{})
 
-	// Set up a log file and include log...
+	// Set up a log file and include log
 	// study:
 	// The os.OpenFile function is the standard Go function for opening files.
 	// os.O_CREATE: This flag creates the file if it doesn't exist.
