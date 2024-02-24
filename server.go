@@ -7,6 +7,7 @@ import (
 	"io"
 	"net"
 	"os"
+	"strings"
 
 	"github.com/sirupsen/logrus"
 )
@@ -20,8 +21,8 @@ type User struct {
 }
 
 var validUser = User{
-	Username: "user1",
-	Password: "pass1",
+	Username: "jkim9115",
+	Password: "9115",
 }
 
 func handleConnection(conn net.Conn) {
@@ -33,32 +34,66 @@ func handleConnection(conn net.Conn) {
 
 	for {
 		// Using Logrus to log the message
-
 		input, err := reader.ReadString('\n')
 		if err != nil {
 			if err != io.EOF {
 				log.WithFields(logrus.Fields{
 					"client": conn.RemoteAddr(),
 				}).Info("Client connected") // [2]
-				break
+			} else {
+				log.WithFields(logrus.Fields{
+					"error":  err.Error(),
+					"client": conn.RemoteAddr(),
+				}).Error("Failed to read from client")
 			}
-
-			log.WithFields(logrus.Fields{
-				"error":  err.Error(),
-				"client": conn.RemoteAddr(),
-			}).Error("Failed to read from client")
 			return
 		}
 
-		// Log the data received from the client.
+		// Processing data received from clients  "jkim9115:9115"
+		input = strings.TrimSpace(input)
+		parts := strings.Split(input, ":")
+		if len(parts) != 2 {
+			log.WithFields(logrus.Fields{
+				"client": conn.RemoteAddr(),
+			}).Error("Invalid login format")
+			fmt.Fprintln(conn, "Invalid login format")
+			continue
+		}
+
+		//check
+		username := parts[0]
+		password := parts[1]
+
+		// Save data received from the client to the log
 		log.WithFields(logrus.Fields{
-			"client": conn.RemoteAddr(),
-			"data":   input,
-		}).Info("Received data from client")
+			"client":   conn.RemoteAddr(),
+			"username": username,
+			"password": password,
+		}).Info("Parsed login attempt")
+
+		fmt.Printf("Check\n")
+		fmt.Printf("Received username from client: %s\n", username)
+		fmt.Printf("Received password client: %s\n", password)
+
+		if username != validUser.Username {
+			log.WithFields(logrus.Fields{
+				"client": conn.RemoteAddr(),
+			}).Warning("Invalid username")
+			// fmt.Fprintln(conn, "Invalid username")
+		} else if password != validUser.Password {
+			log.WithFields(logrus.Fields{
+				"client": conn.RemoteAddr(),
+			}).Warning("Invalid password")
+			// fmt.Fprintln(conn, "Invalid password")
+		} else {
+			log.WithFields(logrus.Fields{
+				"client": conn.RemoteAddr(),
+			}).Info("User authenticated successfully")
+			// fmt.Fprintln(conn, "Login successful!")
+		}
 
 		// Test
-		fmt.Printf("Received from client: %s", input)
-
+		fmt.Printf("Received from client: %s\n", input)
 	}
 
 }
