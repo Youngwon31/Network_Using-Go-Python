@@ -1,3 +1,15 @@
+/*
+* FILE          : Server.go
+* PROJECT       : Assignment3 - Services and Logging
+* AUTHOR        : Youngwon Seo(8818834), Jiu Kim(8819115)
+* DATE          : 2024.02.24
+* DESCRIPTION   : This program is a server-side application that uses TCP to establish a connection with a client.
+*                 It handles requests, such as login attempts from clients, and logs various events
+*                 such as successful authentication, invalid login attempts, rate limit exceeded, etc.
+*                 The server is designed to handle multiple concurrent client connections, allowing it to take care of enforcing rate limits to prevent abuse
+*                 and accurately track and log each client's activity for review.
+ */
+
 // This code is for the server side.
 package main
 
@@ -14,6 +26,7 @@ import (
 )
 
 // Global logger instance
+// Note: https://github.com/sirupsen/logrus
 var log = logrus.New()
 
 type User struct {
@@ -29,7 +42,7 @@ var validUser = User{
 // requestTracker was created for the purpose of tracking the time of a client's request.
 var requestTracker = make(map[string][]time.Time)
 
-func handleConnection(conn net.Conn) {
+func handleConnection(conn net.Conn, clientID int) {
 	// Schedule the network connection to be closed via the net.Conn interface.
 	defer conn.Close()
 
@@ -43,12 +56,14 @@ func handleConnection(conn net.Conn) {
 		if err != nil {
 			if err != io.EOF {
 				log.WithFields(logrus.Fields{
-					"client": conn.RemoteAddr(),
-				}).Info("Client connected") // [2]
+					"client":   conn.RemoteAddr().String(),
+					"clientID": clientID,
+				}).Info("Client connected")
 			} else {
 				log.WithFields(logrus.Fields{
-					"error":  err.Error(),
-					"client": conn.RemoteAddr(),
+					"error":    err.Error(),
+					"client":   conn.RemoteAddr().String(),
+					"clientID": clientID,
 				}).Error("Failed to read from client")
 			}
 			return
@@ -60,10 +75,10 @@ func handleConnection(conn net.Conn) {
 		// Check for more than 10 requests in 10 seconds
 		if len(requestTracker[clientAddr]) > 10 {
 			log.WithFields(logrus.Fields{
-				"client": clientAddr,
+				"client":   conn.RemoteAddr().String(),
+				"clientID": clientID,
 			}).Warning("Rate limit exceeded, disconnecting client")
-			fmt.Fprintf(conn, "Rate limit exceeded, disconnecting\n")
-			return // 연결 종료
+			return
 		}
 
 		// Processing data received from clients  "jkim9115:9115"
@@ -71,9 +86,9 @@ func handleConnection(conn net.Conn) {
 		parts := strings.Split(input, ":")
 		if len(parts) != 2 {
 			log.WithFields(logrus.Fields{
-				"client": conn.RemoteAddr(),
+				"client":   conn.RemoteAddr().String(),
+				"clientID": clientID,
 			}).Error("Invalid login format")
-			fmt.Fprintln(conn, "Invalid login format")
 			continue
 		}
 
@@ -83,34 +98,40 @@ func handleConnection(conn net.Conn) {
 
 		// Save data received from the client to the log
 		log.WithFields(logrus.Fields{
-			"client":   conn.RemoteAddr(),
+			"client":   conn.RemoteAddr().String(),
+			"clientID": clientID,
 			"username": username,
 			"password": password,
-		}).Info("Parsed login attempt")
+		}).Info("Login attempt")
 
-		fmt.Printf("Check\n")
-		fmt.Printf("Received username from client: %s\n", username)
-		fmt.Printf("Received password client: %s\n", password)
+		fmt.Printf("Received username from client[%d]: %s\n", clientID, username)
+		fmt.Printf("Received password from client[%d]: %s\n", clientID, password)
 
 		if username != validUser.Username {
 			log.WithFields(logrus.Fields{
-				"client": conn.RemoteAddr(),
+				"client":   conn.RemoteAddr().String(),
+				"clientID": clientID,
+				"username": username,
+				"password": password,
 			}).Warning("Invalid username")
 			// fmt.Fprintln(conn, "Invalid username")
 		} else if password != validUser.Password {
 			log.WithFields(logrus.Fields{
-				"client": conn.RemoteAddr(),
+				"client":   conn.RemoteAddr().String(),
+				"clientID": clientID,
+				"username": username,
+				"password": password,
 			}).Warning("Invalid password")
 			// fmt.Fprintln(conn, "Invalid password")
 		} else {
 			log.WithFields(logrus.Fields{
-				"client": conn.RemoteAddr(),
+				"client":   conn.RemoteAddr().String(),
+				"clientID": clientID,
+				"username": username,
+				"password": password,
 			}).Info("User authenticated successfully")
 			// fmt.Fprintln(conn, "Login successful!")
 		}
-
-		// Test
-		fmt.Printf("Received from client: %s\n", input)
 	}
 
 }
@@ -145,11 +166,11 @@ func main() {
 	// os.O_WRONLY:  This flag is for opening files in write-only mode
 
 	// Note: https://github.com/sirupsen/logrus
-	logFile, err := os.OpenFile("yseo8834_jiukim9115_server.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	logFile, err := os.OpenFile("yseo8834_jkim9115_server.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err == nil {
 		log.SetOutput(logFile)
 	} else {
-		log.Info("Failed to log to file, using default stderr")
+		log.Fatal("Failed to log to file, using default stderr")
 	}
 
 	// Intended to set log output to logFile.
@@ -158,7 +179,7 @@ func main() {
 	// UDP > net.Listenpacket, TCP > net.listen
 	listener, err := net.Listen("tcp", ":8080") // If an error occurs in this action, it is stored in the err variable.
 
-	fmt.Println("Hello, World!")
+	fmt.Println("Program Start!")
 
 	// nil means 'nothing' or 'no error' in Go
 	if err != nil {
@@ -166,17 +187,19 @@ func main() {
 	}
 	defer listener.Close()
 
-	log.Println("Server Started. Listening on port 8080")
+	log.Info("Server Started. Listening on port 8080")
 
+	clientID := 0 // Create for client-specific separation
 	for {
 		conn, err := listener.Accept()
 
 		if err != nil {
-			log.Println("Connection acceptance errors:", err)
+			log.Fatal("Connection acceptance errors:", err)
 			continue
 		}
 
-		go handleConnection(conn)
+		clientID++
+		go handleConnection(conn, clientID)
 	}
 
 }
