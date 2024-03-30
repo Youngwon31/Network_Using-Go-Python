@@ -1,0 +1,143 @@
+{"level":"info","msg":"Server Started. Listening on port 8080","time":"2024-03-13T21:29:05-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50850","clientID":4,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50849","clientID":3,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:29:19-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:29:19-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50851","clientID":5,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50848","clientID":2,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:29:19-04:00"}
+{"client":"10.144.111.126:50847","clientID":1,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:29:19-04:00"}
+{"level":"fatal","msg":"listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.","time":"2024-03-13T21:33:34-04:00"}
+{"level":"info","msg":"Server Started. Listening on port 8080","time":"2024-03-13T21:33:38-04:00"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"info","msg":"User authenticated successfully","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51156","clientID":3,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51153","clientID":1,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51155","clientID":2,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51157","clientID":4,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"info","msg":"Login attempt","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"warning","msg":"Invalid username","password":"9115","time":"2024-03-13T21:33:44-04:00","username":"jkim7777"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"info","msg":"Login attempt","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"warning","msg":"Invalid password","password":"7777","time":"2024-03-13T21:33:44-04:00","username":"jkim9115"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"error","msg":"Invalid login format","time":"2024-03-13T21:33:44-04:00"}
+{"client":"10.144.111.126:51154","clientID":5,"level":"warning","msg":"Rate limit exceeded, disconnecting client","time":"2024-03-13T21:33:44-04:00"}
